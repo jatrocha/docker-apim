@@ -92,18 +92,18 @@ https_endpoint = "https://localhost:${https.nio.port}"
 #[apim.cache.tags]
 #expiry_time = "2m"
 
-[apim.analytics]
-enable = true
-store_api_url = "https://am-analytics-worker:7444"
+#[apim.analytics]
+#enable = true
+#store_api_url = "https://am-analytics-worker:7444"
 #username = "$ref{super_admin.username}"
 #password = "$ref{super_admin.password}"
 #event_publisher_type = "default"
 #event_publisher_impl = "org.wso2.carbon.apimgt.usage.publisher.APIMgtUsageDataBridgeDataPublisher"
 #publish_response_size = true
 
-[[apim.analytics.url_group]]
-analytics_url =["tcp://am-analytics-worker:7612"]
-analytics_auth_url =["ssl://am-analytics-worker:7712"]
+#[[apim.analytics.url_group]]
+#analytics_url =["tcp://am-analytics-worker:7612"]
+#analytics_auth_url =["ssl://am-analytics-worker:7712"]
 #type = "loadbalance"
 
 #[[apim.analytics.url_group]]
@@ -127,16 +127,16 @@ analytics_auth_url =["ssl://am-analytics-worker:7712"]
 #oidc_logout_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/logout"
 #oidc_check_session_endpoint = "https://localhost:${mgt.transport.https.port}/oidc/checksession"
 
-#[apim.jwt]
-#enable = true
-#encoding = "base64" # base64,base64url
-#generator_impl = "org.wso2.carbon.apimgt.keymgt.token.JWTGenerator"
-#claim_dialect = "http://wso2.org/claims"
-#convert_dialect = false
-#header = "X-JWT-Assertion"
-#signing_algorithm = "SHA256withRSA"
-#enable_user_claims = true
-#claims_extractor_impl = "org.wso2.carbon.apimgt.impl.token.ExtendedDefaultClaimsRetriever"
+[apim.jwt]
+enable = true
+encoding = "base64" # base64,base64url
+generator_impl = "org.wso2.carbon.apimgt.keymgt.token.JWTGenerator"
+claim_dialect = "http://wso2.org/claims"
+convert_dialect = false
+header = "X-JWT-Assertion"
+signing_algorithm = "SHA256withRSA"
+enable_user_claims = true
+claims_extractor_impl = "org.wso2.carbon.apimgt.impl.token.ExtendedDefaultClaimsRetriever"
 
 #[apim.oauth_config]
 #enable_outbound_auth_header = false
